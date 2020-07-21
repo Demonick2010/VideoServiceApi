@@ -10,6 +10,10 @@ namespace TaskManagementApp.Infrastructure
         {
             services.AddTransient<ITaskRepository, TaskRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICategoryOfWork, CategoryOfWork>();
+
             return services;
         }
     }

@@ -1,0 +1,21 @@
+﻿@model VideoService.Models.Models.Category
+
+@{
+    ViewData["Title"] = "Edit category";
+}
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="jumbotron text-center">
+            <form method="post" action="~/dashboard/edit">
+                <input type="hidden" name="Id" value="@Model.Id" />
+                <label>Category Name: @Model.Name</label>
+                <input type="text" name="Name" placeholder="@Model.Name" />
+                <p class="lead">Category ID : @Model.Id</p>
+                <hr class="my-4">
+                <p></p>
+                <input type="submit" class="btn btn-success btn-lg" value="Save" />
+            </form>
+        </div>
+    </div>
+</div>

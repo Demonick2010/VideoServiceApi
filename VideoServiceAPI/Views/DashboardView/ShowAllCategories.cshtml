@@ -1,0 +1,52 @@
+﻿@model List<VideoService.Models.Models.Category>
+
+@{
+    ViewData["Title"] = "All categories";
+}
+
+<div class="row m-3">
+    <div class="text-left">
+        <h2>All Categories List</h2>
+    </div>
+    <div class="col text-right">
+        <a href="/dashboard/add" class="btn btn-success"><i class="fas fa-folder-plus fa-lg">  Add</i></a>
+    </div>
+</div>
+
+@if (TempData["SM"] != null)
+{
+<div class="row text-center alert alert-success fade show">
+    <div class="col">
+        @TempData["SM"]
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+}
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+    <div class="col col-lg-2">
+        <div class="card text-center">
+            <div class="card-header">
+                <div class="badge badge-primary text-wrap" style="font-size: 18px;">@item.Name</div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Category ID: @item.Id</h5>
+                <div class="btn-group" role="group">
+                    <a href="/dashboard/showone/@item.Id" class="btn btn-primary"><i class="fas fa-receipt fa-lg"></i></a>
+                    <a href="/dashboard/edit/@item.Id" class="btn btn-success"><i class="fas fa-edit fa-lg"></i></a>
+                    <a href="/dashboard/delete/@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+
+            </div>
+        </div>
+    </div>
+            }
+
+    </div>

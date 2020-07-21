@@ -1,0 +1,17 @@
+﻿@model VideoService.Models.Models.Category
+
+@{
+    ViewData["Title"] = "One category";
+}
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="jumbotron text-center">
+            <h2>Category Name: @Model.Name</h2>
+            <p class="lead">Category ID : @Model.Id</p>
+            <hr class="my-4">
+            <p></p>
+            <a class="btn btn-primary btn-lg" href="/dashboard/showall" role="button">Back</a>
+        </div>
+    </div>
+</div>
